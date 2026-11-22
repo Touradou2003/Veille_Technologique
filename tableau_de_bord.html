@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tableau de bord – Veille Technologique .NET</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; }
+
+    header {
+      background: linear-gradient(135deg, #512bd4, #0078d4);
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; color: #fff; }
+    header p  { color: #d0c5ff; margin-top: .4rem; }
+
+    main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+
+    h2 { font-size: 1.1rem; color: #8b949e; text-transform: uppercase;
+         letter-spacing: .08em; margin-bottom: 1rem; border-bottom: 1px solid #21262d; padding-bottom: .4rem; }
+
+    /* ── THÉMATIQUES ── */
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+    .tag {
+      background: #161b22; border: 1px solid #30363d;
+      border-radius: 20px; padding: .3rem .9rem; font-size: .85rem; color: #58a6ff;
+    }
+
+    /* ── GRILLE SOURCES ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .card {
+      background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+      padding: 1rem; display: flex; flex-direction: column; gap: .5rem;
+    }
+    .card-header { display: flex; align-items: center; gap: .6rem; }
+    .card-icon { font-size: 1.4rem; }
+    .card-title { font-weight: 600; color: #e6edf3; font-size: .95rem; }
+    .card-desc  { font-size: .82rem; color: #8b949e; flex: 1; }
+    .card-tags  { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .badge {
+      font-size: .72rem; border-radius: 4px; padding: .15rem .5rem;
+      background: #21262d; color: #79c0ff;
+    }
+    .card a {
+      display: inline-block; margin-top: .4rem;
+      font-size: .8rem; color: #58a6ff; text-decoration: none;
+    }
+    .card a:hover { text-decoration: underline; }
+
+    /* ── CRITÈRES ── */
+    .criteria { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .criterion {
+      background: #161b22; border-left: 3px solid #512bd4;
+      border-radius: 0 8px 8px 0; padding: .8rem 1rem;
+    }
+    .criterion strong { color: #e6edf3; display: block; margin-bottom: .25rem; }
+    .criterion span   { font-size: .83rem; color: #8b949e; }
+
+    /* ── INFLUENCEURS ── */
+    .influencers { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .inf-card {
+      background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem;
+      text-align: center;
+    }
+    .inf-card .avatar { font-size: 2.5rem; }
+    .inf-card .name   { font-weight: 600; color: #e6edf3; margin: .4rem 0 .2rem; }
+    .inf-card .role   { font-size: .8rem; color: #8b949e; }
+    .inf-card a       { font-size: .8rem; color: #58a6ff; text-decoration: none; display: block; margin-top: .5rem; }
+
+    footer { text-align: center; padding: 2rem; font-size: .8rem; color: #484f58; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🔭 Veille Technologique .NET</h1>
+  <p>Tableau de bord personnel — mis à jour régulièrement</p>
+</header>
+
+<main>
+
+  <!-- THÉMATIQUES -->
+  <section>
+    <h2>Thématiques suivies</h2>
+    <div class="tags">
+      <span class="tag">.NET 9 / 10</span>
+      <span class="tag">C# 13+</span>
+      <span class="tag">ASP.NET Core</span>
+      <span class="tag">Blazor</span>
+      <span class="tag">Entity Framework Core</span>
+      <span class="tag">.NET MAUI</span>
+      <span class="tag">Minimal APIs</span>
+      <span class="tag">Performance &amp; AOT</span>
+      <span class="tag">NuGet / Open Source</span>
+      <span class="tag">Azure + .NET</span>
+      <span class="tag">Tests unitaires</span>
+      <span class="tag">Architecture &amp; Patterns</span>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section>
+    <h2>Sources d'information</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">📰</span><span class="card-title">Blog officiel .NET</span></div>
+        <p class="card-desc">Annonces officielles, nouvelles versions, articles approfondis par l'équipe Microsoft.</p>
+        <div class="card-tags"><span class="badge">Officiel</span><span class="badge">Très fiable</span></div>
+        <a href="https://devblogs.microsoft.com/dotnet/" target="_blank">devblogs.microsoft.com/dotnet</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">📚</span><span class="card-title">Microsoft Learn / Docs</span></div>
+        <p class="card-desc">Documentation officielle, tutoriels, références API pour tout l'écosystème .NET.</p>
+        <div class="card-tags"><span class="badge">Officiel</span><span class="badge">Référence</span></div>
+        <a href="https://learn.microsoft.com/fr-fr/dotnet/" target="_blank">learn.microsoft.com/dotnet</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">🐙</span><span class="card-title">GitHub dotnet/runtime</span></div>
+        <p class="card-desc">Code source, issues, roadmap et discussions sur le runtime .NET en développement actif.</p>
+        <div class="card-tags"><span class="badge">Open Source</span><span class="badge">Communauté</span></div>
+        <a href="https://github.com/dotnet/runtime" target="_blank">github.com/dotnet/runtime</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">💬</span><span class="card-title">Reddit r/dotnet</span></div>
+        <p class="card-desc">Discussions communautaires, retours d'expérience, liens vers des articles et librairies.</p>
+        <div class="card-tags"><span class="badge">Communauté</span><span class="badge">Actualités</span></div>
+        <a href="https://www.reddit.com/r/dotnet/" target="_blank">reddit.com/r/dotnet</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">🎙️</span><span class="card-title">.NET Rocks! Podcast</span></div>
+        <p class="card-desc">Podcast hebdomadaire avec des experts .NET, couvre un large spectre de sujets techniques.</p>
+        <div class="card-tags"><span class="badge">Podcast</span><span class="badge">Expert</span></div>
+        <a href="https://www.dotnetrocks.com/" target="_blank">dotnetrocks.com</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">🎥</span><span class="card-title">YouTube – dotNET</span></div>
+        <p class="card-desc">Chaîne officielle Microsoft .NET avec conférences, tutoriels et sessions de live coding.</p>
+        <div class="card-tags"><span class="badge">Vidéo</span><span class="badge">Officiel</span></div>
+        <a href="https://www.youtube.com/@dotnet" target="_blank">youtube.com/@dotnet</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">📦</span><span class="card-title">NuGet Blog</span></div>
+        <p class="card-desc">Nouveautés du gestionnaire de paquets NuGet, bonnes pratiques et mises à jour de sécurité.</p>
+        <div class="card-tags"><span class="badge">Outillage</span><span class="badge">Officiel</span></div>
+        <a href="https://devblogs.microsoft.com/nuget/" target="_blank">devblogs.microsoft.com/nuget</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">🏢</span><span class="card-title">.NET Foundation</span></div>
+        <p class="card-desc">Actualités de la fondation open source qui gouverne l'écosystème .NET.</p>
+        <div class="card-tags"><span class="badge">Open Source</span><span class="badge">Gouvernance</span></div>
+        <a href="https://dotnetfoundation.org/news" target="_blank">dotnetfoundation.org/news</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">🛠️</span><span class="card-title">Stack Overflow – C#</span></div>
+        <p class="card-desc">Questions/réponses, trending topics, et retours terrain de la communauté développeurs C#.</p>
+        <div class="card-tags"><span class="badge">Q&amp;A</span><span class="badge">Communauté</span></div>
+        <a href="https://stackoverflow.com/questions/tagged/c%23" target="_blank">stackoverflow.com/c#</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-icon">✍️</span><span class="card-title">DEV.to – .NET</span></div>
+        <p class="card-desc">Articles de développeurs indépendants, retours d'expérience et tutoriels pratiques.</p>
+        <div class="card-tags"><span class="badge">Blog</span><span class="badge">Communauté</span></div>
+        <a href="https://dev.to/t/dotnet" target="_blank">dev.to/t/dotnet</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CRITÈRES DE PERTINENCE -->
+  <section>
+    <h2>Critères de pertinence d'une source</h2>
+    <div class="criteria">
+      <div class="criterion">
+        <strong>Fiabilité</strong>
+        <span>Source officielle Microsoft, .NET Foundation, ou auteur reconnu dans l'écosystème.</span>
+      </div>
+      <div class="criterion">
+        <strong>Fréquence de publication</strong>
+        <span>Mise à jour régulière (au moins mensuelle) pour refléter l'évolution rapide de .NET.</span>
+      </div>
+      <div class="criterion">
+        <strong>Profondeur technique</strong>
+        <span>Contenu allant au-delà de la surface, avec exemples de code et explications d'architecture.</span>
+      </div>
+      <div class="criterion">
+        <strong>Couverture des versions récentes</strong>
+        <span>La source couvre .NET 8+ et C# 12+, pas uniquement l'ancien .NET Framework.</span>
+      </div>
+      <div class="criterion">
+        <strong>Engagement communautaire</strong>
+        <span>Commentaires actifs, corrections, discussions — signe que le contenu est lu et vérifié.</span>
+      </div>
+      <div class="criterion">
+        <strong>Indépendance éditoriale</strong>
+        <span>Contenu non biaisé par des intérêts commerciaux ou des sponsors cachés.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFLUENCEURS -->
+  <section>
+    <h2>Influenceurs suivis sur Twitter/X — <a href="https://x.com/tgueye03/following" target="_blank" style="color:#58a6ff;font-size:.9rem;">voir mes abonnements</a></h2>
+    <div class="influencers">
+
+      <div class="inf-card">
+        <div class="avatar">👨‍💻</div>
+        <div class="name">Scott Hanselman</div>
+        <div class="role">VP Microsoft, evangeliste .NET</div>
+        <a href="https://twitter.com/shanselman" target="_blank">@shanselman</a>
+      </div>
+
+      <div class="inf-card">
+        <div class="avatar">👩‍💻</div>
+        <div class="name">Mads Torgersen</div>
+        <div class="role">Lead designer du langage C#</div>
+        <a href="https://twitter.com/MadsTorgersen" target="_blank">@MadsTorgersen</a>
+      </div>
+
+      <div class="inf-card">
+        <div class="avatar">👨‍💻</div>
+        <div class="name">Nick Chapsas</div>
+        <div class="role">YouTubeur .NET, bonnes pratiques C#</div>
+        <a href="https://www.youtube.com/@nickchapsas" target="_blank">youtube/@nickchapsas</a>
+      </div>
+
+      <div class="inf-card">
+        <div class="avatar">👨‍💻</div>
+        <div class="name">David Fowler</div>
+        <div class="role">Architecte ASP.NET Core chez Microsoft</div>
+        <a href="https://twitter.com/davidfowl" target="_blank">@davidfowl</a>
+      </div>
+
+      <div class="inf-card">
+        <div class="avatar">👩‍💻</div>
+        <div class="name">Cecilia Wirén</div>
+        <div class="role">.NET Community Manager, Microsoft</div>
+        <a href="https://twitter.com/ceciliawiren" target="_blank">@ceciliawiren</a>
+      </div>
+
+      <div class="inf-card">
+        <div class="avatar">👨‍💻</div>
+        <div class="name">Tim Corey</div>
+        <div class="role">YouTubeur pédagogue C# / .NET</div>
+        <a href="https://www.youtube.com/@IAmTimCorey" target="_blank">youtube/@IAmTimCorey</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>Veille Technologique .NET — Touradou2003 — 2026</footer>
+
+</body>
+</html>
